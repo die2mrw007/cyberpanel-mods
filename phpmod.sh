@@ -5,7 +5,7 @@ echo "Version chosen here will be used for phpmyadmin / snappymail"
 echo ""
 
 ## read php version from input and configures it
-read -r -p "Choose one of the following php versions [53-54-55-56-70-71-72-73-74-80-81-82-83]: " Input_Number
+read -r -p "Choose one of the following php versions [53-54-55-56-70-71-72-73-74-80-81-82-83-84-85]: " Input_Number
 echo ""
 
 case "$Input_Number" in
@@ -126,8 +126,26 @@ case "$Input_Number" in
       echo "ERROR! Missing PHP 8.3? Check if /usr/local/lsws/lsphp83 exists."
     fi
     ;;
+  84)
+    if [ -f /usr/local/lsws/lsphp84/bin/lsphp ]; then
+      rm -f /usr/local/lscp/fcgi-bin/lsphp &&
+      ln -s /usr/local/lsws/lsphp83/bin/lsphp /usr/local/lscp/fcgi-bin/lsphp
+      echo "Changed default version to PHP 8.4"
+    else
+      echo "ERROR! Missing PHP 8.4? Check if /usr/local/lsws/lsphp83 exists."
+    fi
+    ;;
+  85)
+    if [ -f /usr/local/lsws/lsphp85/bin/lsphp ]; then
+      rm -f /usr/local/lscp/fcgi-bin/lsphp &&
+      ln -s /usr/local/lsws/lsphp83/bin/lsphp /usr/local/lscp/fcgi-bin/lsphp
+      echo "Changed default version to PHP 8.5"
+    else
+      echo "ERROR! Missing PHP 8.5? Check if /usr/local/lsws/lsphp83 exists."
+    fi
+    ;;
   *)
-    echo -e "Please write php version in the following format [53-54-55-56-70-71-72-73-74-80-81-82-83]\n"
+    echo -e "Please write php version in the following format [53-54-55-56-70-71-72-73-74-80-81-82-83-84-85]\n"
     exit
     ;;
 esac
