@@ -129,7 +129,7 @@ case "$Input_Number" in
   84)
     if [ -f /usr/local/lsws/lsphp84/bin/lsphp ]; then
       rm -f /usr/local/lscp/fcgi-bin/lsphp &&
-      ln -s /usr/local/lsws/lsphp83/bin/lsphp /usr/local/lscp/fcgi-bin/lsphp
+      ln -s /usr/local/lsws/lsphp84/bin/lsphp /usr/local/lscp/fcgi-bin/lsphp
       echo "Changed default version to PHP 8.4"
     else
       echo "ERROR! Missing PHP 8.4? Check if /usr/local/lsws/lsphp83 exists."
@@ -138,7 +138,7 @@ case "$Input_Number" in
   85)
     if [ -f /usr/local/lsws/lsphp85/bin/lsphp ]; then
       rm -f /usr/local/lscp/fcgi-bin/lsphp &&
-      ln -s /usr/local/lsws/lsphp83/bin/lsphp /usr/local/lscp/fcgi-bin/lsphp
+      ln -s /usr/local/lsws/lsphp85/bin/lsphp /usr/local/lscp/fcgi-bin/lsphp
       echo "Changed default version to PHP 8.5"
     else
       echo "ERROR! Missing PHP 8.5? Check if /usr/local/lsws/lsphp83 exists."
